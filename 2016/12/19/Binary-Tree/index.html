@@ -20,10 +20,8 @@
 <meta name="twitter:title" content="Binary Tree">
 <meta name="twitter:description" content="19 Dec 2016 An implementation of Tree in C++This is an simple implementation of Binary Tree template.">
   
-    <link rel="alternative" href="/atom.xml" title="Léo`s Blog" type="application/atom+xml">
   
-  
-    <link rel="icon" href="/favicon.png">
+    <link rel="icon" href="/favicon.ico">
   
   <link rel="stylesheet" type="text/css" href="/./main.0cf68a.css">
   <style type="text/css">
@@ -47,36 +45,30 @@
 <div class="intrude-less">
 	<header id="header" class="inner">
 		<a href="/" class="profilepic">
-			<img src="" class="js-avatar">
+			<img src="/upload/image/IMG_0323.jpg" class="js-avatar">
 		</a>
 		<hgroup>
 		  <h1 class="header-author"><a href="/">Léo WENG</a></h1>
 		</hgroup>
 		
-		<p class="header-subtitle">My Tech Blog</p>
-		
 
 		<nav class="header-menu">
 			<ul>
 			
-				<li><a href="/">主页</a></li>
+				<li><a href="/">main</a></li>
 	        
-				<li><a href="/tags/随笔/">随笔</a></li>
+				<li><a href="/tags/随笔/">tags</a></li>
 	        
 			</ul>
 		</nav>
 		<nav class="header-smart-menu">
     		
     			
-    			<a q-on="click: openSlider(e, 'innerArchive')" href="javascript:void(0)">所有文章</a>
+    			<a q-on="click: openSlider(e, 'innerArchive')" href="javascript:void(0)">all articles</a>
     			
             
     			
-    			<a q-on="click: openSlider(e, 'friends')" href="javascript:void(0)">友链</a>
-    			
-            
-    			
-    			<a q-on="click: openSlider(e, 'aboutme')" href="javascript:void(0)">关于我</a>
+    			<a q-on="click: openSlider(e, 'aboutme')" href="javascript:void(0)">about me</a>
     			
             
 		</nav>
@@ -85,11 +77,9 @@
 				
 					<a class="github" target="_blank" href="#" title="github"><i class="icon-github"></i></a>
 		        
-					<a class="weibo" target="_blank" href="#" title="weibo"><i class="icon-weibo"></i></a>
+					<a class="mail" target="_blank" href="mailto:litten225@qq.com" title="mail"><i class="icon-mail"></i></a>
 		        
-					<a class="rss" target="_blank" href="#" title="rss"><i class="icon-rss"></i></a>
-		        
-					<a class="zhihu" target="_blank" href="#" title="zhihu"><i class="icon-zhihu"></i></a>
+					<a class="linkedin" target="_blank" href="#" title="linkedin"><i class="icon-linkedin"></i></a>
 		        
 			</div>
 		</nav>
@@ -107,13 +97,11 @@
 	<div class="intrude-less">
 		<header id="header" class="inner">
 			<div class="profilepic">
-				<img src="" class="js-avatar">
+				<img src="/upload/image/IMG_0323.jpg" class="js-avatar">
 			</div>
 			<hgroup>
 			  <h1 class="header-author js-header-author">Léo WENG</h1>
 			</hgroup>
-			
-			<p class="header-subtitle"><i class="icon icon-quo-left"></i>My Tech Blog<i class="icon icon-quo-right"></i></p>
 			
 			
 			
@@ -128,11 +116,9 @@
 					
 						<a class="github" target="_blank" href="#" title="github"><i class="icon-github"></i></a>
 			        
-						<a class="weibo" target="_blank" href="#" title="weibo"><i class="icon-weibo"></i></a>
+						<a class="mail" target="_blank" href="mailto:litten225@qq.com" title="mail"><i class="icon-mail"></i></a>
 			        
-						<a class="rss" target="_blank" href="#" title="rss"><i class="icon-rss"></i></a>
-			        
-						<a class="zhihu" target="_blank" href="#" title="zhihu"><i class="icon-zhihu"></i></a>
+						<a class="linkedin" target="_blank" href="#" title="linkedin"><i class="icon-linkedin"></i></a>
 			        
 				</div>
 			</nav>
@@ -141,9 +127,9 @@
 				<ul style="width: 50%">
 				
 				
-					<li style="width: 50%"><a href="/">主页</a></li>
+					<li style="width: 50%"><a href="/">main</a></li>
 		        
-					<li style="width: 50%"><a href="/tags/随笔/">随笔</a></li>
+					<li style="width: 50%"><a href="/tags/随笔/">tags</a></li>
 		        
 				</ul>
 			</nav>
@@ -209,27 +195,6 @@
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">template</span> &lt;<span class="class"><span class="keyword">class</span> <span class="title">T</span>&gt;</span></span><br><span class="line"><span class="class"><span class="title">class</span> <span class="title">BinarySearchTree</span>:</span><span class="keyword">public</span> BinaryTree&lt;T&gt; </span><br><span class="line">&#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    BinarySearchTree()&#123;&#125;;</span><br><span class="line">    <span class="keyword">virtual</span> ~BinarySearchTree()&#123;&#125;;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">InsertNode</span><span class="params">(BinaryTreeNode&lt;T&gt;* newpointer)</span></span>;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">DeleteNode</span><span class="params">(BinaryTreeNode&lt;T&gt;* pointer)</span></span>;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">template</span> &lt;<span class="class"><span class="keyword">class</span> <span class="title">T</span>&gt;</span></span><br><span class="line"><span class="class"><span class="title">void</span> <span class="title">BinarySearchTree</span>&lt;T&gt;:</span>:InsertNode(BinaryTreeNode&lt;T&gt;* newpointer)</span><br><span class="line">&#123;</span><br><span class="line">    BinaryTreeNode&lt;T&gt;* pointer=<span class="literal">NULL</span>; <span class="comment">//初始化 </span></span><br><span class="line">    <span class="keyword">if</span>(root==<span class="literal">NULL</span>) &#123;</span><br><span class="line">        <span class="comment">//用指针newpointer初始化二叉搜索树树根，赋值实现</span></span><br><span class="line">        Initialize(newpointer);</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span> pointer=root;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">while</span>(<span class="number">1</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span>(newpointer-&gt;value()==pointer-&gt;value())</span><br><span class="line">            <span class="keyword">return</span> ;                                    <span class="comment">//相等则不用插入</span></span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span>(newpointer-&gt;value()&lt;pointer-&gt;value())   <span class="comment">//作为左子树</span></span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span>(pointer-&gt;leftchild()==<span class="literal">NULL</span>)  &#123;</span><br><span class="line">                pointer-&gt;left=newpointer;</span><br><span class="line">                <span class="keyword">return</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span>    pointer=pointer-&gt;leftchild();</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span>&#123;                                           <span class="comment">//作为右子树</span></span><br><span class="line">            <span class="keyword">if</span>(pointer-&gt;rightchild()==<span class="literal">NULL</span>)&#123;</span><br><span class="line">                pointer-&gt;right=newpointer;</span><br><span class="line">                <span class="keyword">return</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span>    pointer=pointer-&gt;rightchild();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">template</span> &lt;<span class="class"><span class="keyword">class</span> <span class="title">T</span>&gt;</span></span><br><span class="line"><span class="class"><span class="title">void</span> <span class="title">BinarySearchTree</span>&lt;T&gt;:</span>:DeleteNode(BinaryTreeNode&lt;T&gt;* pointer)</span><br><span class="line">&#123;   </span><br><span class="line">    <span class="keyword">if</span>( pointer == <span class="literal">NULL</span> )   <span class="comment">//如果带删除节点为空,返回</span></span><br><span class="line">        <span class="keyword">return</span>; </span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    BinaryTreeNode&lt;T&gt; * parent = GetParent(root ,pointer ); <span class="comment">//保存要删除节点的父节点 </span></span><br><span class="line">    <span class="keyword">if</span>( pointer-&gt;leftchild() == <span class="literal">NULL</span> )  <span class="comment">//如果待删除节点的左子树为空,就将它的右子树代替它即可</span></span><br><span class="line">    &#123;       </span><br><span class="line">        <span class="keyword">if</span>( parent == <span class="literal">NULL</span> )                      <span class="comment">//将右子树连到待删除节点的父的合适位置</span></span><br><span class="line">            root = pointer-&gt;rightchild();</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span>( parent-&gt;leftchild() == pointer )</span><br><span class="line">            parent-&gt;left = pointer-&gt;rightchild();</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">            parent-&gt;right = pointer-&gt;rightchild();</span><br><span class="line">        <span class="keyword">delete</span> pointer;</span><br><span class="line">        pointer=<span class="literal">NULL</span>;</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//当待删除节点左子树不为空,就在左子树中寻找最大节点替换待删除节点</span></span><br><span class="line">    BinaryTreeNode&lt;T&gt; * temppointer;  <span class="comment">//保存要替换上来的节点 </span></span><br><span class="line">    BinaryTreeNode&lt;T&gt; * tempparent = <span class="literal">NULL</span>;  <span class="comment">//保存要替换上来的节点的父节点 </span></span><br><span class="line">    temppointer = pointer-&gt;leftchild();     </span><br><span class="line">    <span class="keyword">while</span>(temppointer-&gt;rightchild() != <span class="literal">NULL</span> )</span><br><span class="line">    &#123;</span><br><span class="line">        tempparent = temppointer;</span><br><span class="line">        temppointer = temppointer-&gt;rightchild();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//删除替换结点</span></span><br><span class="line">    <span class="keyword">if</span>(tempparent==<span class="literal">NULL</span>)</span><br><span class="line">        pointer-&gt;left=temppointer-&gt;leftchild();</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">        tempparent-&gt;right=temppointer-&gt;leftchild();</span><br><span class="line"></span><br><span class="line">    <span class="comment">//用替换结点去替代真正的删除结点</span></span><br><span class="line">    <span class="keyword">if</span>(parent==<span class="literal">NULL</span>)</span><br><span class="line">        root=temppointer;</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span>( parent-&gt;leftchild() == pointer )</span><br><span class="line">        parent-&gt;left=temppointer;</span><br><span class="line">    <span class="keyword">else</span> parent-&gt;right=temppointer;</span><br><span class="line"></span><br><span class="line">    temppointer-&gt;left=pointer-&gt;leftchild();</span><br><span class="line">    temppointer-&gt;right=pointer-&gt;rightchild();</span><br><span class="line"></span><br><span class="line">    <span class="keyword">delete</span> pointer;</span><br><span class="line">    pointer=<span class="literal">NULL</span>;</span><br><span class="line">    <span class="keyword">return</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
       
 
-      
-        <div class="page-reward">
-          <a href="javascript:;" class="page-reward-btn tooltip-top">
-            <div class="tooltip tooltip-east">
-            <span class="tooltip-item">
-              赏
-            </span>
-            <span class="tooltip-content">
-              <span class="tooltip-text">
-                <span class="tooltip-inner">
-                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
-                  <div class="reward-box">
-                    
-                    
-                  </div>
-                </span>
-              </span>
-            </span>
-          </div>
-          </a>
-        </div>
       
     </div>
     <div class="article-info article-info-index">
@@ -413,25 +378,17 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
       
       
     
-      
-      
-      
-    
     
 
     <ul style="width: 70%">
     
     
       
-      <li style="width: 33.333333333333336%" q-on="click: openSlider(e, 'innerArchive')"><a href="javascript:void(0)" q-class="active:innerArchive">所有文章</a></li>
+      <li style="width: 50%" q-on="click: openSlider(e, 'innerArchive')"><a href="javascript:void(0)" q-class="active:innerArchive">all articles</a></li>
       
         
       
-      <li style="width: 33.333333333333336%" q-on="click: openSlider(e, 'friends')"><a href="javascript:void(0)" q-class="active:friends">友链</a></li>
-      
-        
-      
-      <li style="width: 33.333333333333336%" q-on="click: openSlider(e, 'aboutme')"><a href="javascript:void(0)" q-class="active:aboutme">关于我</a></li>
+      <li style="width: 50%" q-on="click: openSlider(e, 'aboutme')"><a href="javascript:void(0)" q-class="active:aboutme">about me</a></li>
       
         
     </ul>
@@ -514,38 +471,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
     	</section>
     
 
-    
-    	<section class="tools-section tools-section-friends" q-show="friends">
-  		
-        <ul class="search-ul">
-          
-            <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接1</a>
-            </li>
-          
-            <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接2</a>
-            </li>
-          
-            <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接3</a>
-            </li>
-          
-            <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接4</a>
-            </li>
-          
-            <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接5</a>
-            </li>
-          
-            <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接6</a>
-            </li>
-          
-        </ul>
-  		
-    	</section>
     
 
     
