@@ -18,7 +18,7 @@
 
   
   
-    <link href="/favicon.icon" rel="icon">
+    <link href="/favicon.ico" rel="icon">
   
 
   <!-- CSS -->
@@ -165,9 +165,45 @@
 		
             
 		
+            
+		
         
         <!-- render other articles -->
         
+           
+			  
+	
+	<!-- display as entry -->	
+		<h3 class="title">
+			<div class="date"> 2018-05-12 </div>
+			<div class="article-title"><a href="/2018/05/12/CssTips/" >CssTips</a></div>						
+		</h3>
+	
+
+
+			  <div class="entry">
+  <div class="row">
+	
+	
+		<h2 id="Position-property"><a href="#Position-property" class="headerlink" title="Position property"></a>Position property</h2><ul>
+<li>static (default)</li>
+<li>relative</li>
+<li>fixed</li>
+<li>absolute</li>
+<li>sticky</li>
+</ul>
+<p>elements are then positioned using the: top, bottom, left, right properties. However, position must be set first to let the others to work.</p>
+<p><strong>relative</strong>:<br>    relative to its normal position<br>    top, right, bottom, left will cause it to be adjusted away from its original position</p>
+<p><strong>fixed</strong>:<br>    stay relative to the viewport(the screen)<br>    will not move even the page is scrolled</p>
+<p><strong>absolute</strong>:<br>    positioned relative to the nearest positioned ancestor</p>
+<p><strong>sticky</strong>:<br>    is positioned based on the user’s scroll position. sticky when scroll to it.</p>
+	
+	</div>
+  <a type="button" href="/2018/05/12/CssTips/#more" class="btn btn-default more">Read More</a>
+</div>
+
+           
+		
            
 			  
 	
@@ -426,37 +462,6 @@
 
            
 		
-           
-			  
-	
-	<!-- display as entry -->	
-		<h3 class="title">
-			<div class="date"> 2016-11-08 </div>
-			<div class="article-title"><a href="/2016/11/08/FileStreamAndTemplate/" >FileStreamAndTemplate.md</a></div>						
-		</h3>
-	
-
-
-			  <div class="entry">
-  <div class="row">
-	
-	
-		<p><code>8 Nov 2016</code></p>
-<h1 id="文件操作"><a href="#文件操作" class="headerlink" title="文件操作"></a>文件操作</h1><p>用于文件操作 — 统称为文件流类。C++标准库中: ifstream, ofstream和fstream共3个类。<br>先打开文件，再读写文件，再关闭文件。<br>包含头文件 <code>#include &lt;fstream&gt;</code> </p>
-<h2 id="打开文件"><a href="#打开文件" class="headerlink" title="打开文件"></a>打开文件</h2><ol>
-<li><p>创建文件流对象并且打开<br><code>ofstream outFile(“clients.dat”, ios::out|ios::binary);</code></p>
-</li>
-<li><p>创建文件流之后打开</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ofstream fout;</span><br><span class="line">fout.open( “test.out”, ios::out|ios::binary );</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-	
-	</div>
-  <a type="button" href="/2016/11/08/FileStreamAndTemplate/#more" class="btn btn-default more">Read More</a>
-</div>
-
-           
-		
 
 		</div>
 
@@ -506,6 +511,15 @@
 
 		
 			
+	<div class="widget">
+		<h4>Categories</h4>
+		<ul class="tag_box inline list-unstyled">
+		
+			<li><a href="/categories/web/">web<span>1</span></a></li>
+		
+		</ul>
+	</div>
+
 		
 			
 	<div class="widget">
@@ -514,13 +528,15 @@
 		
 			<li><a href="/tags/iOS/">iOS<span>1</span></a></li>
 		
-			<li><a href="/tags/育碧面试网测-C/">育碧面试网测(C++)<span>1</span></a></li>
-		
 			<li><a href="/tags/算法总结/">算法总结<span>1</span></a></li>
+		
+			<li><a href="/tags/育碧面试网测-C/">育碧面试网测(C++)<span>1</span></a></li>
 		
 			<li><a href="/tags/autolayout-iOS/">autolayout, iOS<span>1</span></a></li>
 		
 			<li><a href="/tags/Tips-For-Review/">Tips For Review<span>1</span></a></li>
+		
+			<li><a href="/tags/css/">css<span>1</span></a></li>
 		
 		 
 		</ul>
@@ -532,6 +548,10 @@
 <div class="widget">
   <h4>Recent Posts</h4>
   <ul class="entry list-unstyled">
+    
+      <li>
+        <a href="/2018/05/12/CssTips/" ><i class="fa fa-file-o"></i>CssTips</a>
+      </li>
     
       <li>
         <a href="/2017/05/09/NSURL-Session-Key-notes/" ><i class="fa fa-file-o"></i>NSURL Session Key Notes</a>
@@ -547,10 +567,6 @@
     
       <li>
         <a href="/2016/12/19/Python-Study/" ><i class="fa fa-file-o"></i>Python Study</a>
-      </li>
-    
-      <li>
-        <a href="/2016/12/19/Binary-Tree/" ><i class="fa fa-file-o"></i>Binary Tree</a>
       </li>
     
   </ul>

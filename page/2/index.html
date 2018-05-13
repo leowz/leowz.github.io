@@ -18,7 +18,7 @@
 
   
   
-    <link href="/favicon.icon" rel="icon">
+    <link href="/favicon.ico" rel="icon">
   
 
   <!-- CSS -->
@@ -112,6 +112,37 @@
         
         <!-- render other articles -->
         
+           
+			  
+	
+	<!-- display as entry -->	
+		<h3 class="title">
+			<div class="date"> 2016-11-08 </div>
+			<div class="article-title"><a href="/2016/11/08/FileStreamAndTemplate/" >FileStreamAndTemplate.md</a></div>						
+		</h3>
+	
+
+
+			  <div class="entry">
+  <div class="row">
+	
+	
+		<p><code>8 Nov 2016</code></p>
+<h1 id="文件操作"><a href="#文件操作" class="headerlink" title="文件操作"></a>文件操作</h1><p>用于文件操作 — 统称为文件流类。C++标准库中: ifstream, ofstream和fstream共3个类。<br>先打开文件，再读写文件，再关闭文件。<br>包含头文件 <code>#include &lt;fstream&gt;</code> </p>
+<h2 id="打开文件"><a href="#打开文件" class="headerlink" title="打开文件"></a>打开文件</h2><ol>
+<li><p>创建文件流对象并且打开<br><code>ofstream outFile(“clients.dat”, ios::out|ios::binary);</code></p>
+</li>
+<li><p>创建文件流之后打开</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ofstream fout;</span><br><span class="line">fout.open( “test.out”, ios::out|ios::binary );</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+	
+	</div>
+  <a type="button" href="/2016/11/08/FileStreamAndTemplate/#more" class="btn btn-default more">Read More</a>
+</div>
+
+           
+		
            
 			  
 	
@@ -468,36 +499,6 @@
 
            
 		
-           
-			  
-	
-	<!-- display as entry -->	
-		<h3 class="title">
-			<div class="date"> 2016-08-27 </div>
-			<div class="article-title"><a href="/2016/08/27/LintCode-Medium-Java-Solution/" >LintCode Medium Java Solution</a></div>						
-		</h3>
-	
-
-
-			  <div class="entry">
-  <div class="row">
-	
-	
-		<h5 id="Ugly-Number-II"><a href="#Ugly-Number-II" class="headerlink" title="Ugly Number II"></a>Ugly Number II</h5><ul>
-<li>Ugly number is a number that only have factors 2,3 and 5.Design an algorithm to find the nth ugly number. The first 10 ugly numbers are1, 2, 3, 4, 5, 6, 8, 9, 10, 12…</li>
-</ul>
-<h6 id="solution"><a href="#solution" class="headerlink" title="solution:"></a>solution:</h6><ul>
-<li>triple pointer: because the Ugly number array is an array that starts from 1 and by multiply 2,3,5 repeatedly to the numbers in the array.So the idea is to point at numbers in the array and check if the number multiplied by 2,3,5 is greater then the last number.</li>
-<li>三个指针指向一个数列，如果指向目标乘2、3、5大于数列最后一个数，则从三者中选最小的加入数列</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">nthUglyNumber</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">               List&lt;Integer&gt; uglys = <span class="keyword">new</span> ArrayList&lt;Integer&gt;();</span><br><span class="line">        uglys.add(<span class="number">1</span>);</span><br><span class="line"></span><br><span class="line">        <span class="keyword">int</span> p2 = <span class="number">0</span>, p3 = <span class="number">0</span>, p5 = <span class="number">0</span>;</span><br><span class="line">        <span class="comment">// p2, p3 &amp; p5 share the same queue: uglys</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; n; i++) &#123;</span><br><span class="line">            <span class="keyword">int</span> lastNumber = uglys.get(i - <span class="number">1</span>);</span><br><span class="line">            <span class="keyword">while</span> (uglys.get(p2) * <span class="number">2</span> &lt;= lastNumber) p2++;</span><br><span class="line">            <span class="keyword">while</span> (uglys.get(p3) * <span class="number">3</span> &lt;= lastNumber) p3++;</span><br><span class="line">            <span class="keyword">while</span> (uglys.get(p5) * <span class="number">5</span> &lt;= lastNumber) p5++;</span><br><span class="line"></span><br><span class="line">            uglys.add(Math.min(</span><br><span class="line">                Math.min(uglys.get(p2) * <span class="number">2</span>, uglys.get(p3) * <span class="number">3</span>),</span><br><span class="line">                uglys.get(p5) * <span class="number">5</span></span><br><span class="line">            ));</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> uglys.get(n - <span class="number">1</span>);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
-	
-	</div>
-  <a type="button" href="/2016/08/27/LintCode-Medium-Java-Solution/#more" class="btn btn-default more">Read More</a>
-</div>
-
-           
-		
 
 		</div>
 
@@ -547,21 +548,32 @@
 
 		
 			
+	<div class="widget">
+		<h4>Categories</h4>
+		<ul class="tag_box inline list-unstyled">
+		
+			<li><a href="/categories/web/">web<span>1</span></a></li>
+		
+		</ul>
+	</div>
+
 		
 			
 	<div class="widget">
 		<h4>Tag Cloud</h4>
 		<ul class="tag_box inline list-unstyled">		
 		
+			<li><a href="/tags/Tips-For-Review/">Tips For Review<span>1</span></a></li>
+		
+			<li><a href="/tags/算法总结/">算法总结<span>1</span></a></li>
+		
+			<li><a href="/tags/css/">css<span>1</span></a></li>
+		
 			<li><a href="/tags/育碧面试网测-C/">育碧面试网测(C++)<span>1</span></a></li>
 		
 			<li><a href="/tags/iOS/">iOS<span>1</span></a></li>
 		
 			<li><a href="/tags/autolayout-iOS/">autolayout, iOS<span>1</span></a></li>
-		
-			<li><a href="/tags/Tips-For-Review/">Tips For Review<span>1</span></a></li>
-		
-			<li><a href="/tags/算法总结/">算法总结<span>1</span></a></li>
 		
 		 
 		</ul>
@@ -573,6 +585,10 @@
 <div class="widget">
   <h4>Recent Posts</h4>
   <ul class="entry list-unstyled">
+    
+      <li>
+        <a href="/2018/05/12/CssTips/" ><i class="fa fa-file-o"></i>CssTips</a>
+      </li>
     
       <li>
         <a href="/2017/05/09/NSURL-Session-Key-notes/" ><i class="fa fa-file-o"></i>NSURL Session Key Notes</a>
@@ -588,10 +604,6 @@
     
       <li>
         <a href="/2016/12/19/Python-Study/" ><i class="fa fa-file-o"></i>Python Study</a>
-      </li>
-    
-      <li>
-        <a href="/2016/12/19/Binary-Tree/" ><i class="fa fa-file-o"></i>Binary Tree</a>
       </li>
     
   </ul>

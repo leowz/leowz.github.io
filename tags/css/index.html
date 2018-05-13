@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   
-  <title>算法总结 | Léo`s Blog</title>
+  <title>css | Léo`s Blog</title>
   <meta name="author" content="Léo WENG">
   
   
@@ -94,7 +94,7 @@
 
 <!-- title -->
 <div class="page-header page-header-inverse ">
-  <h1 class="archive-title-tag title title-inverse ">算法总结</h1>
+  <h1 class="archive-title-tag title title-inverse ">css</h1>
 </div>
 
 <div class="row page">
@@ -113,8 +113,8 @@
 	
 	<!-- display as entry -->	
 		<h3 class="title">
-			<div class="date"> 2016-07-13 </div>
-			<div class="article-title"><a href="/2016/07/13/Key-Algorithms/" >Key Algorithms</a></div>						
+			<div class="date"> 2018-05-12 </div>
+			<div class="article-title"><a href="/2018/05/12/CssTips/" >CssTips</a></div>						
 		</h3>
 	
 
@@ -123,24 +123,21 @@
   <div class="row">
 	
 	
-		<p>[TOC]</p>
-<h1 id="Quick-Sort"><a href="#Quick-Sort" class="headerlink" title="Quick Sort"></a>Quick Sort</h1><ul>
-<li>explain:<br>Set a pivot point in the array,all bigger than pivot to the right and all smaller than pivot to the left.divide the array through the pivot point into two subarray and do the sorting recursively.</li>
+		<h2 id="Position-property"><a href="#Position-property" class="headerlink" title="Position property"></a>Position property</h2><ul>
+<li>static (default)</li>
+<li>relative</li>
+<li>fixed</li>
+<li>absolute</li>
+<li>sticky</li>
 </ul>
-<p>The steps are:<br>1 Pick an element, called a pivot, from the array.<br>2 Partitioning: reorder the array so that all elements with values less than the pivot come before the pivot, while all elements with values greater than the pivot come after it (equal values can go either way). After this partitioning, the pivot is in its final position. This is called the partition operation.<br>3 Recursively apply the above steps to the sub-array of elements with smaller values and separately to the sub-array of elements with greater values.</p>
-<ul>
-<li>分治法，快速排序</li>
-</ul>
-<p>数组中找一个中心点，把大于中心点的放在右，小于中心点的放在左。在中心点左右两个子数组中迭代的使用快速排序再排列。伪代码给出的实现方法用双指针法，把数组最右边元素当做中心点，前一个指针遍历数组，后一个指针纪录比中心点小的元素子列头位置，一旦前面指针遍历到有比中心点小的元素，则后面指针自增一并与前指针交换元素，形成前大于中心点子数组和后小于中心点子数组。最后把最右边的中心点与后指针加一位置元素交换再对两个子数组迭代。</p>
-<p>步骤：<br>1 选中心点，一般为数组结尾元素。<br>2 分隔：重新调整数组，使比中心点小的元素在数组左边，比中心点大的元素在数组右边。分隔之后中心点在两个子数组中间。<br>3 在比中心点小的元素子数组和比中心大的子数组上迭代以上步骤，直到排序完成。</p>
-<ul>
-<li><p>pseudo code:</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">QuickSort(Array A,fistIndex p,lastIndex r) //p <span class="keyword">and</span> r represent the range to sort</span><br><span class="line"><span class="keyword">if</span>  p &lt; r:</span><br><span class="line">     q = Partition(A,p,r);</span><br><span class="line">     QuickSort(A,p,q<span class="number">-1</span>);</span><br><span class="line">     QuickSort(A,q+<span class="number">1</span>,r);</span><br><span class="line"></span><br><span class="line">Partition(Array A,startIndex p,endIndex r)</span><br><span class="line">x = A[r];</span><br><span class="line">i = p - <span class="number">1</span>;</span><br><span class="line"><span class="keyword">for</span> j = p to r <span class="number">-1</span>:</span><br><span class="line">     <span class="keyword">if</span> A[j] &lt;= x :</span><br><span class="line">          i = i + <span class="number">1</span>;</span><br><span class="line">          exchange A[i] <span class="keyword">with</span> A[j]; //<span class="keyword">if</span> A[j] <span class="keyword">is</span> smaller than pivot point,put into left subarray</span><br><span class="line">exchange A[i + <span class="number">1</span>] <span class="keyword">with</span> A[r]; // after iteration put pivot into where it divide the two subarrays.</span><br><span class="line"><span class="keyword">return</span> i + <span class="number">1</span>; // <span class="keyword">return</span> the index of the pivot point</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>runtime O( )<br>worst case: O(n^2);<br>best case: O(n <em> log n) or O(n);<br>average case performance : O(n </em> log n);</p>
+<p>elements are then positioned using the: top, bottom, left, right properties. However, position must be set first to let the others to work.</p>
+<p><strong>relative</strong>:<br>    relative to its normal position<br>    top, right, bottom, left will cause it to be adjusted away from its original position</p>
+<p><strong>fixed</strong>:<br>    stay relative to the viewport(the screen)<br>    will not move even the page is scrolled</p>
+<p><strong>absolute</strong>:<br>    positioned relative to the nearest positioned ancestor</p>
+<p><strong>sticky</strong>:<br>    is positioned based on the user’s scroll position. sticky when scroll to it.</p>
 	
 	</div>
-  <a type="button" href="/2016/07/13/Key-Algorithms/#more" class="btn btn-default more">Read More</a>
+  <a type="button" href="/2018/05/12/CssTips/#more" class="btn btn-default more">Read More</a>
 </div>
 
 	       
@@ -194,17 +191,17 @@
 		<h4>Tag Cloud</h4>
 		<ul class="tag_box inline list-unstyled">		
 		
-			<li><a href="/tags/css/">css<span>1</span></a></li>
+			<li><a href="/tags/算法总结/">算法总结<span>1</span></a></li>
 		
 			<li><a href="/tags/育碧面试网测-C/">育碧面试网测(C++)<span>1</span></a></li>
-		
-			<li><a href="/tags/Tips-For-Review/">Tips For Review<span>1</span></a></li>
 		
 			<li><a href="/tags/autolayout-iOS/">autolayout, iOS<span>1</span></a></li>
 		
 			<li><a href="/tags/iOS/">iOS<span>1</span></a></li>
 		
-			<li><a href="/tags/算法总结/">算法总结<span>1</span></a></li>
+			<li><a href="/tags/css/">css<span>1</span></a></li>
+		
+			<li><a href="/tags/Tips-For-Review/">Tips For Review<span>1</span></a></li>
 		
 		 
 		</ul>
