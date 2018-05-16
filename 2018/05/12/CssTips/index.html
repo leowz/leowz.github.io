@@ -205,13 +205,13 @@ sticky:    is positioned based on the user’s scroll position. sticky when scro
 <li>text-shadow</li>
 <li>box-shadow</li>
 </ul>
-<p>specify the horizontal diff and vertical diff and a blur and color<br>example:<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">h1</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="attribute">text-shadow</span>: <span class="number">2px</span> <span class="number">2px</span> <span class="number">5px</span> red;</span><br><span class="line">    <span class="attribute">box-shadow</span>: <span class="number">2px</span> <span class="number">2px</span> <span class="number">2</span>p grey;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>specify the horizontal diff and vertical diff and a blur and color<br>example:<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">h1</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="attribute">text-shadow</span>: <span class="number">2px</span> <span class="number">2px</span> <span class="number">5px</span> red;</span><br><span class="line">    <span class="attribute">box-shadow</span>: <span class="number">2px</span> <span class="number">2px</span> <span class="number">2px</span> grey;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <h2 id="box-sizing-property"><a href="#box-sizing-property" class="headerlink" title="box-sizing property"></a>box-sizing property</h2><p>can add padding and border to the element’s total width and height</p>
 <ul>
 <li>border-box (add padding and border to total width and height)</li>
 <li>content-box (default, width and height only affects content)</li>
 </ul>
-<h2 id="Flex-box-layout"><a href="#Flex-box-layout" class="headerlink" title="Flex box layout"></a>Flex box layout</h2><p>To use flexbox model, it needs a flex container and its items.</p>
+<h2 id="Flex-box-layout"><a href="#Flex-box-layout" class="headerlink" title="Flex box layout"></a>Flex box layout</h2><p>One dimension table views in either horizontal or vertical way. By using <code>flex-wrap</code>, can wrap it to two dimensional.<br>To use flexbox model, it needs a flex container and its items.</p>
 <p>In flex container, setting the display property to flex to enable flex module.<br>In flex container, the following properties can be configured:</p>
 <ul>
 <li>flex-direction ([row| column])</li>
@@ -232,13 +232,39 @@ sticky:    is positioned based on the user’s scroll position. sticky when scro
 <li>align-self        (alignment of the item [auto | stretch | center | flex-start| flex-end])</li>
 </ul>
 <h2 id="Grid-layout-module"><a href="#Grid-layout-module" class="headerlink" title="Grid layout module"></a>Grid layout module</h2><p>grid layout consists of a parent element, the container and the child elements.<br>To use grid module, set the container display property to <code>grid</code> or <code>inline-grid</code></p>
-<ul>
-<li>grid-template-columns        (specify the number of columns in a grid [auto| length(number)])</li>
-<li>grid-template-rows             (specify the number of rows in a grid [auto| length(number)])</li>
-<li>grid-auto-rows                      (set a size for the rows)</li>
-<li>grid-auto-columns                (set a size for the columns)</li>
+<h3 id="Terminology"><a href="#Terminology" class="headerlink" title="Terminology:"></a>Terminology:</h3><ul>
+<li>grid container:  containing a grid, with <code>display: grid</code></li>
+<li>grid item : direct descendant of the grid container</li>
+<li>grid line: horizontal and vertical line separating the grid into sections</li>
+<li>grid cell: intersection between row and column, same as a table cell</li>
+<li>grid track: row tracks or column tracks, strip of cells</li>
+<li>grid area: arear between four grid lines, which covers more than one cell</li>
+<li>grid gap: space between cells, gutters</li>
 </ul>
-<p>example:<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.grid-container</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="attribute">display</span>: grid;</span><br><span class="line">    <span class="attribute">grid-template-columns</span>: auto auto auto;</span><br><span class="line">    <span class="attribute">grid-template-rows</span>: <span class="number">80px</span> <span class="number">200px</span>;</span><br><span class="line">    <span class="attribute">grid-gap</span>: <span class="number">10px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="How-to-use"><a href="#How-to-use" class="headerlink" title="How to use"></a>How to use</h3><ol>
+<li>Define a grid</li>
+<li>Place items within the grid</li>
+</ol>
+<h4 id="Defince-a-grid"><a href="#Defince-a-grid" class="headerlink" title="Defince a grid"></a>Defince a grid</h4><p>First configure the grid container by defining: </p>
+<ol>
+<li><code>display: grid</code></li>
+<li>the template for the columns and rows</li>
+</ol>
+<p>In defining the columns and rows, we can use <code>fr</code> (fraction)  to denote how to divide the whole space.<br>After defining the grid, the gird will automatically place all items into the grid, from left to right, from top to bottom.</p>
+<p>example:<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.grid-container</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="attribute">display</span>: grid;</span><br><span class="line">    grid-template-columns: auto auto auto; // also can be 2fr 1fr 1fr</span><br><span class="line">    <span class="selector-tag">grid-template-rows</span>: 80<span class="selector-tag">px</span> 200<span class="selector-tag">px</span>; </span><br><span class="line">    <span class="selector-tag">grid-gap</span>: 10<span class="selector-tag">px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h4 id="Grid-item"><a href="#Grid-item" class="headerlink" title="Grid item"></a>Grid item</h4><p>For each grid item, we can define how much space it will take.</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">grid-column: 2/4;</span><br><span class="line">grid-row: 2/3</span><br></pre></td></tr></table></figure>
+<p>This specific this item to take column from line 2 to line 4, and row from line2 to line3</p>
+<h4 id="Grid-template-areas"><a href="#Grid-template-areas" class="headerlink" title="Grid template areas"></a>Grid template areas</h4><p>A way to manage grid areas easily.<br><code>grid-template-areas</code> defines how each areas block should be placed in the grid.<br><code>grid-area</code> in items defines which item correspond to which area.</p>
+<p>First, declare the template in the grid container:<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.site</span> &#123;</span><br><span class="line">    <span class="attribute">display</span>: grid;</span><br><span class="line">    //defines a 3*2 grid</span><br><span class="line">    <span class="selector-tag">grid-template-rows</span>: <span class="selector-tag">auto</span> 1<span class="selector-tag">fr</span> 3<span class="selector-tag">fr</span>; </span><br><span class="line">    <span class="selector-tag">grid-template-columns</span>: 1<span class="selector-tag">fr</span> 1<span class="selector-tag">fr</span>;</span><br><span class="line">    //define the areas in the grid</span><br><span class="line">    <span class="selector-tag">grid-template-areas</span>:</span><br><span class="line">        “<span class="selector-tag">title</span> <span class="selector-tag">title</span>”</span><br><span class="line">        “<span class="selector-tag">main</span> <span class="selector-tag">header</span>”</span><br><span class="line">        “<span class="selector-tag">main</span> <span class="selector-tag">sidebar</span>”;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// give each item a corresponding name for area</span><br><span class="line"><span class="selector-class">.masthead</span> &#123;</span><br><span class="line">    <span class="attribute">grid-area</span>: header;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.page-title</span> &#123;</span><br><span class="line">    <span class="attribute">grid-area</span>: title;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.main-content</span> &#123;</span><br><span class="line">    <span class="attribute">grid-area</span>: main;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="Test-support-grid"><a href="#Test-support-grid" class="headerlink" title="Test support grid"></a>Test support grid</h3><p>To test if the browser support the grid layout, in case of IE.<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">@<span class="keyword">supports</span> (display: grid)</span><br><span class="line">&#123;</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="CSS-grid-RWD-responsive-web-design-approach-for-today"><a href="#CSS-grid-RWD-responsive-web-design-approach-for-today" class="headerlink" title="CSS grid RWD(responsive web design) approach for today"></a>CSS grid RWD(responsive web design) approach for today</h3><ol>
+<li>build accessible mobile-first layout without grid</li>
+<li>use mobile-first layout as fallback for all browsers.</li>
+<li>user @supports to detect gird support</li>
+<li>At the appropriate point, create layout with grid and grid-areas.</li>
+<li>export new layout as viewport widens</li>
+</ol>
 <h2 id="Css-Media-Queries"><a href="#Css-Media-Queries" class="headerlink" title="Css Media Queries"></a>Css Media Queries</h2><p>The <code>@media</code> rule made it possible to define different style for different media types.</p>
 <p>syntax<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">@<span class="keyword">media</span> [not| only] mediatype and (expressions)</span><br><span class="line">&#123;</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 	  
@@ -252,9 +278,9 @@ sticky:    is positioned based on the user’s scroll position. sticky when scro
 	<div class="pagination">
 <ul class="pagination">
 	 
-		
-          <li class="prev disabled"><a><i class="fa fa-arrow-circle-o-left"></i>Prev</a></li>
-        
+				
+    	<li class="prev"><a href="/2018/05/16/JsTips/" class="alignleft prev"><i class="fa fa-arrow-circle-o-left"></i>Prev</a></li>
+  		
 
         <li><a href="/archives"><i class="fa fa-archive"></i>Archive</a></li>
 
@@ -309,7 +335,7 @@ sticky:    is positioned based on the user’s scroll position. sticky when scro
     <ul id="categorys" class="tag_box list-unstyled collapse in">
           
   <li>
-    <li><a href="/categories/web/">web<span>1</span></a></li>
+    <li><a href="/categories/web/">web<span>2</span></a></li>
   </li>
 
     </ul>

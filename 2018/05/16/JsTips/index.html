@@ -3,13 +3,27 @@
 <head>
   <meta charset="utf-8">
   
-  <title>web | Léo`s Blog</title>
+  <title>JsTips | Léo`s Blog</title>
   <meta name="author" content="Léo WENG">
+  
+  <meta name="description" content="Data typesPrimitive Data types
+
+string
+number  
+boolean (true| false lowercase)
+undefined 
+
+Complex Data types
+
+function (Function object)
+object
+
+Inh">
   
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  
+  <meta property="og:title" content="JsTips"/>
   <meta property="og:site_name" content="Léo`s Blog"/>
 
   
@@ -92,38 +106,30 @@
   	<div class="content">
     	 
 
-<!-- title -->
-<div class="page-header page-header-inverse ">
-  <h1 class="archive-title-category title title-inverse ">web</h1>
-</div>
 
-<div class="row page">
-  <!-- cols -->
-  
-  <div class="col-md-9">
 	
-
-	  <div id="top_search"></div>
-
-      
-         <!-- display as entry -->
-	     <div class="mypage">
-	       
-		     
-	
-	<!-- display as entry -->	
-		<h3 class="title">
-			<div class="date"> 2018-05-16 </div>
-			<div class="article-title"><a href="/2018/05/16/JsTips/" >JsTips</a></div>						
-		</h3>
+		<div class="page-header page-header-inverse ">		
+			<h1 class="title title-inverse "> JsTips</h1>
+		</div>		
 	
 
 
-		     <div class="entry">
-  <div class="row">
+
+
+
+
+<div class="row post">
+	<!-- cols -->
 	
+	<div id="top_meta"></div>
+	<div class="col-md-9">
 	
-		<h2 id="Data-types"><a href="#Data-types" class="headerlink" title="Data types"></a>Data types</h2><p>Primitive Data types</p>
+
+	<!-- content -->
+	<div class="mypage">		
+	  		
+
+	  <h2 id="Data-types"><a href="#Data-types" class="headerlink" title="Data types"></a>Data types</h2><p>Primitive Data types</p>
 <ul>
 <li>string</li>
 <li>number  </li>
@@ -202,161 +208,116 @@
 <p><strong>fix:</strong><br>Just set <code>this</code> value to another variable so that closure can capture the variable.</p>
 <p>example:<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> user = &#123; </span><br><span class="line">tournament:<span class="string">"The Masters"</span>,</span><br><span class="line">data :[ </span><br><span class="line">&#123;<span class="attr">name</span>:<span class="string">"T. Woods"</span>, <span class="attr">age</span>:<span class="number">37</span>&#125;, </span><br><span class="line">&#123;<span class="attr">name</span>:<span class="string">"P. Mickelson"</span>, <span class="attr">age</span>:<span class="number">43</span>&#125; </span><br><span class="line">], </span><br><span class="line"></span><br><span class="line">clickHandler:<span class="function"><span class="keyword">function</span> (<span class="params">event</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> theUserObj = <span class="keyword">this</span>; </span><br><span class="line">    <span class="keyword">this</span>.data.forEach (<span class="function"><span class="keyword">function</span> (<span class="params">person</span>) </span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log (person.name + <span class="string">" is playing at "</span> + theUserObj.tournament); </span><br><span class="line">        &#125;) </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <h4 id="this-passed-as-a-variable"><a href="#this-passed-as-a-variable" class="headerlink" title="this passed as a variable"></a>this passed as a variable</h4><p>When pass a method as a variable that contains <code>this</code>, it is the same case with the callback function.<br>The fix is by setting <code>this</code> value using <code>bind()</code> method.</p>
-
-	
+	  
 	</div>
-  <a type="button" href="/2018/05/16/JsTips/#more" class="btn btn-default more">Read More</a>
-</div>
 
-	       
-		     
-	
-	<!-- display as entry -->	
-		<h3 class="title">
-			<div class="date"> 2018-05-12 </div>
-			<div class="article-title"><a href="/2018/05/12/CssTips/" >CssTips</a></div>						
-		</h3>
+	<!-- recommended posts -->
 	
 
-
-		     <div class="entry">
-  <div class="row">
-	
-	
-		<h2 id="Position-property"><a href="#Position-property" class="headerlink" title="Position property"></a>Position property</h2><ul>
-<li>static (default)</li>
-<li>relative</li>
-<li>fixed</li>
-<li>absolute</li>
-<li>sticky</li>
-</ul>
-<p>elements are then positioned using the: top, bottom, left, right properties. However, position must be set first to let the others to work.</p>
-<p><strong>relative</strong>:<br>    relative to its normal position<br>    top, right, bottom, left will cause it to be adjusted away from its original position</p>
-<p><strong>fixed</strong>:<br>    stay relative to the viewport(the screen)<br>    will not move even the page is scrolled</p>
-<p><strong>absolute</strong>:<br>    positioned relative to the nearest positioned ancestor</p>
-<p><strong>sticky</strong>:<br>    is positioned based on the user’s scroll position. sticky when scroll to it.</p>
-	
-	</div>
-  <a type="button" href="/2018/05/12/CssTips/#more" class="btn btn-default more">Read More</a>
-</div>
-
-	       
-	     </div>
-	     <div>
-	       <center>
-	         <div class="pagination">
+	<div>
+  	<center>
+	<div class="pagination">
 <ul class="pagination">
 	 
+		
+          <li class="prev disabled"><a><i class="fa fa-arrow-circle-o-left"></i>Prev</a></li>
+        
+
+        <li><a href="/archives"><i class="fa fa-archive"></i>Archive</a></li>
+
+		
+		   <li class="next"><a href="/2018/05/12/CssTips/" class="alignright next">Next<i class="fa fa-arrow-circle-o-right"></i></a></li>         
+        
+	
 </ul>
 </div>
 
-	       </center>
-	     </div>	
-      
-
-</div> <!-- col-md-9/col-md-12 -->
-
-
-<div class="col-md-3">
-	<div id="sidebar">
-	
-			
-  <div id="site_search">
-   <div class="form-group">
-    <input type="text" id="local-search-input" name="q" results="0" placeholder="Search" class="st-search-input st-default-search-input form-control"/>
-   </div>  
-  <div id="local-search-result"></div>
-  </div>
-
-
-		
-			<div class="widget">
-    
-</div>
-
-		
-			
-	<div class="widget">
-		<h4>Categories</h4>
-		<ul class="tag_box inline list-unstyled">
-		
-			<li><a href="/categories/web/">web<span>2</span></a></li>
-		
-		</ul>
+    </center>
 	</div>
 
+    <!-- share -->
+    
+        
+
+        
+
+    
+	
+	<!-- comment -->
+	
+<section id="comment">
+  <h2 class="title">Comments</h2>
+  
+  	 <div id="disqus_thread">
+     <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  	 </div>
+  
+</section>
+
+
+	</div> <!-- col-md-9/col-md-12 -->
 		
-			
-	<div class="widget">
-		<h4>Tag Cloud</h4>
-		<ul class="tag_box inline list-unstyled">		
-		
-			<li><a href="/tags/育碧面试网测-C/">育碧面试网测(C++)<span>1</span></a></li>
-		
-			<li><a href="/tags/算法总结/">算法总结<span>1</span></a></li>
-		
-			<li><a href="/tags/iOS/">iOS<span>1</span></a></li>
-		
-			<li><a href="/tags/autolayout-iOS/">autolayout, iOS<span>1</span></a></li>
-		
-			<li><a href="/tags/Tips-For-Review/">Tips For Review<span>1</span></a></li>
-		
-			<li><a href="/tags/javascript/">javascript<span>1</span></a></li>
-		
-			<li><a href="/tags/css/">css<span>1</span></a></li>
-		
-		 
-		</ul>
+	
+	<div id="side_meta">
+		<div class="col-md-3" id="post_meta"> 
+
+	<!-- date -->
+	
+	<div class="meta-widget">
+	<i class="fa fa-clock-o"></i>
+	2018-05-16 
 	</div>
-
-
-		
-			
-<div class="widget">
-  <h4>Recent Posts</h4>
-  <ul class="entry list-unstyled">
-    
-      <li>
-        <a href="/2018/05/16/JsTips/" ><i class="fa fa-file-o"></i>JsTips</a>
-      </li>
-    
-      <li>
-        <a href="/2018/05/12/CssTips/" ><i class="fa fa-file-o"></i>CssTips</a>
-      </li>
-    
-      <li>
-        <a href="/2017/05/09/NSURL-Session-Key-notes/" ><i class="fa fa-file-o"></i>NSURL Session Key Notes</a>
-      </li>
-    
-      <li>
-        <a href="/2017/05/02/Auto-Layout-iOS/" ><i class="fa fa-file-o"></i>Auto Layout iOS</a>
-      </li>
-    
-      <li>
-        <a href="/2017/01/30/Django/" ><i class="fa fa-file-o"></i>Django</a>
-      </li>
-    
-  </ul>
-</div>
-
-		
-			
-<div class="widget">
-	<h4>Links</h4>
-	<ul class="blogroll list-unstyled">
 	
-		<li><i class="fa fa-github"></i><a href="https://github.com/leowz" title="My Github account." target="_blank"]);">Github</a></li>
-	
-		<li><i class="fa fa-linkedin"></i><a href="https://www.linkedin.com/in/leoweng/" title="My Linkin account." target="_blank"]);">LinkedIn</a></li>
-	
-	</ul>
-</div>
 
+	<!-- categories -->
+    
+	<div class="meta-widget">
+	<a data-toggle="collapse" data-target="#categorys"><i class="fa fa-folder"></i></a>	
+    <ul id="categorys" class="tag_box list-unstyled collapse in">
+          
+  <li>
+    <li><a href="/categories/web/">web<span>2</span></a></li>
+  </li>
 
+    </ul>
+	</div>
+	
+
+	<!-- tags -->
+	
+	<div class="meta-widget">
+	<a data-toggle="collapse" data-target="#tags"><i class="fa fa-tags"></i></a>		  
+    <ul id="tags" class="tag_box list-unstyled collapse in">	  
+	    
+  <li><a href="/tags/javascript/">javascript<span>1</span></a></li>
+    </ul>
+	</div>
+	
+
+	<!-- toc -->
+	<div class="meta-widget">
+	
+	</div>
+	
+    <hr>
+	
+</div><!-- col-md-3 -->
+
+	</div>
 		
-	</div> <!-- sidebar -->
-</div> <!-- col-md-3 -->
 
+</div><!-- row -->
+
+<script type="text/javascript">
+var disqus_shortname = 'leoweng';
+(function(){
+  var dsq = document.createElement('script');
+  dsq.type = 'text/javascript';
+  dsq.async = true;
+  dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+  (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+}());
+</script>
 
 
 
