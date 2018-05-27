@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   
   <title>LintCode &amp; LeetCode algorithms Easy | Léo`s Blog</title>
-  <meta name="author" content="Léo WENG">
+  <meta name="author" content="Zhang WENG">
   
   <meta name="description" content="Merge Sorted Array IIMerge two given sorted integer array A and B into a new sorted integer array.两数组从大到小排列合并算法ExampleA=[1,2,3,4]B=[2,4,5,6]return [1,2,2,3,4,4,5,6]solution:// 因为数组有排序过 通过从数组尾到头 一个个比较 之后把大的元素插入新数组 实现12345678910111213141516171819public int[] mergeSortedArray(int[] A, int[] B) &amp;#123;       int[] result = new int[A.length + B.length];       int i = A.length - 1;       int j = B.length - 1;       int index = i + j + 1;       while(j&amp;gt;=0 &amp;amp;&amp;amp; i &amp;gt;= 0)&amp;#123;           if (A[i] &amp;gt; B[j])&amp;#123;           result[index--] = A[i--];&amp;#125;else&amp;#123;               result[index--] = B[j--];           &amp;#125;       &amp;#125;       while(i&amp;gt;=0)&amp;#123;           result[index--] = A[i--];       &amp;#125;       while(j&amp;gt;=0)&amp;#123;           result[index--] = B[j--];       &amp;#125;       return result;    &amp;#125;
 First Position of Target二分法查询实现：For a given sorted array (ascending order) and a target number, find the first index of this number in O(log n) time complexity. If the target number does not exist in the array, return -1.12345678910111213141516171819202122232425public int binarySearch(int[] nums, int target) &amp;#123;      if (nums == null || nums.length == 0) &amp;#123;          return -1;      &amp;#125;      int start = 0, end = nums.length - 1;      while (start + 1 &amp;lt; end) &amp;#123;  //这里由于求mid取整所以不会收缩到一个结果只会到最后两个结果 所以要＋1          int mid = start + (end - start) / 2;          if (nums[mid] &amp;lt; target) &amp;#123;              start = mid;          &amp;#125; else &amp;#123;              end = mid;          &amp;#125;      &amp;#125;      if (nums[start] == target) &amp;#123;          return start;      &amp;#125;      if (nums[end] == target) &amp;#123;          return end;      &amp;#125;      return -1;  &amp;#125;">
@@ -288,7 +288,7 @@ var disqus_shortname = 'leoweng';
   </div>
   <div class="container-narrow">
   <footer> <p>
-  &copy; 2018 Léo WENG
+  &copy; 2018 Zhang WENG
   
       with help from <a href="http://hexo.io/" target="_blank">Hexo</a> and <a href="http://getbootstrap.com/" target="_blank">Twitter Bootstrap</a>. Theme by <a href="http://github.com/wzpan/hexo-theme-freemind/">Freemind</a>.    
 </p> </footer>

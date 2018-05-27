@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   
   <title>web | Léo`s Blog</title>
-  <meta name="author" content="Léo WENG">
+  <meta name="author" content="Zhang WENG">
   
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -113,6 +113,41 @@
 	
 	<!-- display as entry -->	
 		<h3 class="title">
+			<div class="date"> 2018-05-20 </div>
+			<div class="article-title"><a href="/2018/05/20/ReactBasics/" >ReactBasics</a></div>						
+		</h3>
+	
+
+
+		     <div class="entry">
+  <div class="row">
+	
+	
+		<h1 id="Components-and-Props"><a href="#Components-and-Props" class="headerlink" title="Components and Props"></a>Components and Props</h1><p>Components are linke JS functions, they accept inputs called props and return React elements to render on screen.</p>
+<h2 id="Functional-and-Classy-Components"><a href="#Functional-and-Classy-Components" class="headerlink" title="Functional and Classy Components"></a>Functional and Classy Components</h2><p>A JS function can define a React component.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Welcome</span>(<span class="params">props</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> &lt;h1&gt;Hello, &#123;props.name&#125;&lt;/h1&gt;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>Its a valid React component because it accepts a single props object argument and returns a React element. Its called a functional components.</p>
+<p>We can also define a class that extends <code>React.Component</code>. These two components are equivalent from React’s point of view.</p>
+<h2 id="Props"><a href="#Props" class="headerlink" title="Props"></a>Props</h2><p>When React sees an JSX element with attributes, it passes this attributes to this component as a single object. We call this object props.</p>
+<p>example:<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Welcome</span>(<span class="params">props</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> &lt;h1&gt;Hello, &#123;props.name&#125;&lt;/h1&gt;;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> element = &lt;Welcome name="Sara" /&gt;;</span><br><span class="line">ReactDOM.render(</span><br><span class="line">  element,</span><br><span class="line">  document.getElementById('root')</span><br><span class="line">);</span><br></pre></td></tr></table></figure></p>
+<p>In this example:</p>
+<ol>
+<li>We call ReactDom.render() function with <code>&lt;Welcome name=’Sara’ /&gt;</code> element.</li>
+<li>React calls the Welcome component with <code>{name: ’Sara’}</code> as the props, since class or React component is in fact a function.</li>
+<li>Welcome component returns a <code>&lt;h1 &gt;Hello, Sara&lt;/ h1&gt;</code> element as the result.</li>
+<li>React DOM updates the DOM to display the added h1 tag.</li>
+</ol>
+<p>Note: Always start component names with a capital letter. Since React treated components starting with lowercase letters as DOM(HTML) tags.</p>
+	
+	</div>
+  <a type="button" href="/2018/05/20/ReactBasics/#more" class="btn btn-default more">Read More</a>
+</div>
+
+	       
+		     
+	
+	<!-- display as entry -->	
+		<h3 class="title">
 			<div class="date"> 2018-05-16 </div>
 			<div class="article-title"><a href="/2018/05/16/JsTips/" >JsTips</a></div>						
 		</h3>
@@ -123,7 +158,7 @@
   <div class="row">
 	
 	
-		<h2 id="Data-types"><a href="#Data-types" class="headerlink" title="Data types"></a>Data types</h2><p>Primitive Data types</p>
+		<h1 id="Data-types"><a href="#Data-types" class="headerlink" title="Data types"></a>Data types</h1><p>Primitive Data types</p>
 <ul>
 <li>string</li>
 <li>number  </li>
@@ -135,74 +170,15 @@
 <li>function (Function object)</li>
 <li>object</li>
 </ul>
-<h2 id="Inheritance-and-the-prototype-chain"><a href="#Inheritance-and-the-prototype-chain" class="headerlink" title="Inheritance and the prototype chain"></a>Inheritance and the prototype chain</h2><p>Javascript uses the prototypal inheritance form. Object inherit directly from other objects. </p>
+<h1 id="Modules"><a href="#Modules" class="headerlink" title="Modules"></a>Modules</h1><h2 id="ES6-Module-Singleton"><a href="#ES6-Module-Singleton" class="headerlink" title="ES6 Module Singleton"></a>ES6 Module Singleton</h2><p>ES6 Modules are singletons.</p>
+<p>Export the new instance as default.</p>
+<p>If you simply export a class instead of an instance, you can create other instance obviously. In this scenario, there is no singleton.</p>
+<h2 id="export-Key-Word"><a href="#export-Key-Word" class="headerlink" title="export Key Word"></a><code>export</code> Key Word</h2><p><code>export</code> statement is used when creating JS modules to export functions, objects, etc. So they can be used by other programs with <code>import</code> statement.</p>
+<p>syntax:<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">export</span> &#123;name1, var2 = name2&#125;;</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">let</span>(<span class="keyword">const</span>) name1;</span><br><span class="line"><span class="keyword">export</span> <span class="function"><span class="keyword">function</span> <span class="title">name</span>(<span class="params"></span>)</span>&#123;&#125;;</span><br><span class="line"><span class="keyword">export</span> <span class="class"><span class="keyword">class</span> <span class="title">ClassName</span> </span>&#123;&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> expression;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> * <span class="keyword">from</span> …;</span><br></pre></td></tr></table></figure></p>
+<h2 id="import-Key-Word"><a href="#import-Key-Word" class="headerlink" title="import Key Word"></a><code>import</code> Key Word</h2><p>syntax:<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> defaultExport <span class="keyword">from</span> ‘<span class="built_in">module</span>-name’;</span><br><span class="line"><span class="keyword">import</span> * <span class="keyword">as</span> name <span class="keyword">from</span> ‘<span class="built_in">module</span>’;</span><br><span class="line"><span class="keyword">import</span> &#123; export1, export2 &#125; <span class="keyword">from</span> ‘<span class="built_in">module</span>’;</span><br></pre></td></tr></table></figure></p>
+<h1 id="Inheritance-and-the-prototype-chain"><a href="#Inheritance-and-the-prototype-chain" class="headerlink" title="Inheritance and the prototype chain"></a>Inheritance and the prototype chain</h1><p>Javascript uses the prototypal inheritance form. Object inherit directly from other objects. </p>
 <p>Each object has a private property which holds a link to another object called its <code>prototype</code>. That prototype object has a prototype of its own and so on util an object is reached with <code>null</code> as its prototype. <code>null</code> here acts as the final link in this prototype chain.</p>
 <p>Nearly, all object in JS are instances of <code>Object</code> which sits on the top of a prototype chain.</p>
-<h3 id="Inheritance"><a href="#Inheritance" class="headerlink" title="Inheritance"></a>Inheritance</h3><p>JS objects are dynamic bags of properties. JS objects have a link to a prototype object. When trying to access a property of an object, the property will not only search the object but on the property of the object also, until either a property with a bathing name is found or the end of the prototype chain is reached.</p>
-<p>ways to create the prototype chain:</p>
-<ul>
-<li>syntax constructs</li>
-<li>constructor (new keyword)</li>
-<li>Object.create</li>
-<li>class, extends</li>
-</ul>
-<p>example:<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> b = [<span class="string">"yo"</span>, <span class="string">"whadup"</span>, <span class="string">"?"</span>];</span><br><span class="line"><span class="comment">/* Arrays inherit from Array.prototype </span></span><br><span class="line"><span class="comment"> (which has methods indexOf, forEach, etc.)</span></span><br><span class="line"><span class="comment"> The prototype chain looks like:</span></span><br><span class="line"><span class="comment"> b ---&gt; Array.prototype ---&gt; Object.prototype ---&gt; null;</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">f</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="number">2</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/* Functions inherit from Function.prototype </span></span><br><span class="line"><span class="comment"> (which has methods call, bind, etc.)</span></span><br><span class="line"><span class="comment"> f ---&gt; Function.prototype ---&gt; Object.prototype ---&gt; null</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Graph</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">this</span>.vertices = [];</span><br><span class="line">  <span class="keyword">this</span>.edges = [];</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> g = <span class="keyword">new</span> Graph();</span><br><span class="line"><span class="comment">/* g is an object with own properties 'vertices' and 'edges'.</span></span><br><span class="line"><span class="comment"> g.[[Prototype]] is the value of Graph.prototype when new Graph() is executed.</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> a = &#123;<span class="attr">a</span>: <span class="number">1</span>&#125;; </span><br><span class="line"><span class="comment">// a ---&gt; Object.prototype ---&gt; null</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> b = <span class="built_in">Object</span>.create(a);</span><br><span class="line"><span class="comment">// b ---&gt; a ---&gt; Object.prototype ---&gt; null</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Polygon</span> </span>&#123;</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Square</span> <span class="keyword">extends</span> <span class="title">Polygon</span> </span>&#123;</span><br><span class="line"> …</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<h2 id="JavaScript-Functions"><a href="#JavaScript-Functions" class="headerlink" title="JavaScript Functions"></a>JavaScript Functions</h2><p>Every function in JS is a <code>Function</code> object, they have properties and methods just like any other object. However, functions can be called.</p>
-<p>Properties:</p>
-<ul>
-<li>Function.arguments</li>
-<li>Function.caller</li>
-<li>Function.length</li>
-<li>Function.name</li>
-<li>Function.prototype</li>
-</ul>
-<p>Methods:</p>
-<ul>
-<li>Function.prototype.apply()</li>
-<li>Function.prototype.bind()</li>
-<li>Function.prototype.call()</li>
-<li>Function.prototype.toString()</li>
-</ul>
-<h3 id="Create-functions"><a href="#Create-functions" class="headerlink" title="Create functions"></a>Create functions</h3><p>function declaration and function expression<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">function1(width, height) &#123;</span><br><span class="line">    <span class="keyword">return</span> width * height;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> getRectArea = function2(width, height) &#123;</span><br><span class="line">    <span class="keyword">return</span> width * height;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>arrow function expression<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">([param]) =&gt; &#123;</span><br><span class="line">    statements</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<h2 id="JavaScript-Objects"><a href="#JavaScript-Objects" class="headerlink" title="JavaScript Objects"></a>JavaScript Objects</h2><p>Objects are variable that contain many key value pars. Name and blues is spared by a colon(:) and each pair is separated by coma(,).<br>Object properties can be primitive values, other objects or functions.</p>
-<p>Properties:</p>
-<ul>
-<li>Object.prototype</li>
-<li>Object.prototype.constructor</li>
-</ul>
-<p>Methods:</p>
-<ul>
-<li>Object.assign() : Copies the values from one object to a targe object</li>
-<li>Object.create() : Create object</li>
-<li>Object.is() : compare two object are the same</li>
-<li>Object.keys() : return an array of all key of the object</li>
-<li>Object.values() : return an array of all values</li>
-</ul>
-<p>creating a JS object:</p>
-<ol>
-<li>object literal ({key1: val1, key2: val2})</li>
-<li>using keyword new  (var person = new Object())</li>
-</ol>
-<p>Objects are mutable; they are addressed by reference.</p>
-<h3 id="object-properties"><a href="#object-properties" class="headerlink" title="object properties"></a>object properties</h3><p>accessing the property of an object:</p>
-<ul>
-<li>objectName.property</li>
-<li>objectName[“property”]</li>
-</ul>
-<p>adding new properties:<br>add new properties by simply giving it a value<br><code>person, nationality = “English”;</code></p>
-<p>deleting properties:<br>use delete keyword<br><code>delete person.age;</code></p>
-<h3 id="this-Keyword"><a href="#this-Keyword" class="headerlink" title="this Keyword"></a>this Keyword</h3><p>Every new function has its own this value, this is the new object in case of a constructor, undefined in strict mode function calls, this represents the context object if the function is called as an “object method” etc.</p>
-<p>Note that, this holds the value of undefined in global functions and in anonymous functions that are not bound to any object.</p>
-<h4 id="this-in-the-global-scope"><a href="#this-in-the-global-scope" class="headerlink" title="this in the global scope"></a>this in the global scope</h4><p>In the global scope, when the code is executing in the browser, a functions with this, this refers to the global <code>window</code> object(not in strict mode) that is the main container of the entire JS application.</p>
-<h4 id="context"><a href="#context" class="headerlink" title="context"></a>context</h4><p>The object that invokes a function is in the context, we can change the context by invoking a function with another object, then this new object is in context.</p>
-<h4 id="this-in-a-callback-function"><a href="#this-in-a-callback-function" class="headerlink" title="this in a callback function"></a>this in a callback function</h4><p>When we execute a method passed from another object as a callback function. This keyword refers to current object and not the original object that defines the callback function. It refers to the object where the method is invoked.<br>So if the callback function contains <code>this</code> key word. The behaviour of function will not be correct.</p>
-<p><strong>fix:</strong><br>Use <code>Bind()</code> , <code>Apply()</code> or <code>Call()</code> method to specifically set the value of this.</p>
-<h4 id="this-inside-closure"><a href="#this-inside-closure" class="headerlink" title="this inside closure"></a>this inside closure</h4><p>It is important to note that closures cannot access the outer function’s this variable by using <code>this</code> keyword. Inside an anonymous function, <code>this</code> is bound to the global window(or undefined in strict mode).</p>
-<p><strong>fix:</strong><br>Just set <code>this</code> value to another variable so that closure can capture the variable.</p>
-<p>example:<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> user = &#123; </span><br><span class="line">tournament:<span class="string">"The Masters"</span>,</span><br><span class="line">data :[ </span><br><span class="line">&#123;<span class="attr">name</span>:<span class="string">"T. Woods"</span>, <span class="attr">age</span>:<span class="number">37</span>&#125;, </span><br><span class="line">&#123;<span class="attr">name</span>:<span class="string">"P. Mickelson"</span>, <span class="attr">age</span>:<span class="number">43</span>&#125; </span><br><span class="line">], </span><br><span class="line"></span><br><span class="line">clickHandler:<span class="function"><span class="keyword">function</span> (<span class="params">event</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> theUserObj = <span class="keyword">this</span>; </span><br><span class="line">    <span class="keyword">this</span>.data.forEach (<span class="function"><span class="keyword">function</span> (<span class="params">person</span>) </span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log (person.name + <span class="string">" is playing at "</span> + theUserObj.tournament); </span><br><span class="line">        &#125;) </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<h4 id="this-passed-as-a-variable"><a href="#this-passed-as-a-variable" class="headerlink" title="this passed as a variable"></a>this passed as a variable</h4><p>When pass a method as a variable that contains <code>this</code>, it is the same case with the callback function.<br>The fix is by setting <code>this</code> value using <code>bind()</code> method.</p>
-
 	
 	</div>
   <a type="button" href="/2018/05/16/JsTips/#more" class="btn btn-default more">Read More</a>
@@ -280,7 +256,7 @@
 		<h4>Categories</h4>
 		<ul class="tag_box inline list-unstyled">
 		
-			<li><a href="/categories/web/">web<span>2</span></a></li>
+			<li><a href="/categories/web/">web<span>3</span></a></li>
 		
 		</ul>
 	</div>
@@ -291,19 +267,21 @@
 		<h4>Tag Cloud</h4>
 		<ul class="tag_box inline list-unstyled">		
 		
-			<li><a href="/tags/育碧面试网测-C/">育碧面试网测(C++)<span>1</span></a></li>
-		
-			<li><a href="/tags/算法总结/">算法总结<span>1</span></a></li>
-		
-			<li><a href="/tags/iOS/">iOS<span>1</span></a></li>
-		
 			<li><a href="/tags/autolayout-iOS/">autolayout, iOS<span>1</span></a></li>
 		
-			<li><a href="/tags/Tips-For-Review/">Tips For Review<span>1</span></a></li>
+			<li><a href="/tags/育碧面试网测-C/">育碧面试网测(C++)<span>1</span></a></li>
 		
 			<li><a href="/tags/javascript/">javascript<span>1</span></a></li>
 		
 			<li><a href="/tags/css/">css<span>1</span></a></li>
+		
+			<li><a href="/tags/算法总结/">算法总结<span>1</span></a></li>
+		
+			<li><a href="/tags/Tips-For-Review/">Tips For Review<span>1</span></a></li>
+		
+			<li><a href="/tags/react/">react<span>1</span></a></li>
+		
+			<li><a href="/tags/iOS/">iOS<span>1</span></a></li>
 		
 		 
 		</ul>
@@ -315,6 +293,10 @@
 <div class="widget">
   <h4>Recent Posts</h4>
   <ul class="entry list-unstyled">
+    
+      <li>
+        <a href="/2018/05/20/ReactBasics/" ><i class="fa fa-file-o"></i>ReactBasics</a>
+      </li>
     
       <li>
         <a href="/2018/05/16/JsTips/" ><i class="fa fa-file-o"></i>JsTips</a>
@@ -330,10 +312,6 @@
     
       <li>
         <a href="/2017/05/02/Auto-Layout-iOS/" ><i class="fa fa-file-o"></i>Auto Layout iOS</a>
-      </li>
-    
-      <li>
-        <a href="/2017/01/30/Django/" ><i class="fa fa-file-o"></i>Django</a>
       </li>
     
   </ul>
@@ -364,7 +342,7 @@
   </div>
   <div class="container-narrow">
   <footer> <p>
-  &copy; 2018 Léo WENG
+  &copy; 2018 Zhang WENG
   
       with help from <a href="http://hexo.io/" target="_blank">Hexo</a> and <a href="http://getbootstrap.com/" target="_blank">Twitter Bootstrap</a>. Theme by <a href="http://github.com/wzpan/hexo-theme-freemind/">Freemind</a>.    
 </p> </footer>
